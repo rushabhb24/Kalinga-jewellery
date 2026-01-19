@@ -1040,3 +1040,52 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
+/* Hamburger Menu */
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--green);
+    transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Hide desktop navbar */
+    .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: var(--skin);
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    /* Toggle menu */
+    #menu-toggle:checked + .hamburger + .navbar {
+        display: flex;
+    }
+}
